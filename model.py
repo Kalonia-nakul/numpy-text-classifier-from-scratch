@@ -17,8 +17,10 @@ def clean_text(text: str) -> str:
             temp += " "
     return temp.lower().strip()
 
-# Step 2 - tokenize (not yet solved)
-# TODO: implement
+# Step 2 - tokenize
+def tokenize(text: str) -> list:
+    # TODO: Split cleaned text on whitespace into non-empty word tokens
+    return text.strip().split()
 
 # Step 3 - tokenize_corpus (not yet solved)
 # TODO: implement
