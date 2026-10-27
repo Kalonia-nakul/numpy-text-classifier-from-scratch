@@ -22,8 +22,15 @@ def tokenize(text: str) -> list:
     # TODO: Split cleaned text on whitespace into non-empty word tokens
     return text.strip().split()
 
-# Step 3 - tokenize_corpus (not yet solved)
-# TODO: implement
+# Step 3 - tokenize_corpus
+def tokenize_corpus(texts: list) -> list:
+    corpus = []                      # list of token lists, one per document
+    for doc in texts:                # doc = one input string
+        cleaned = ""                 # doc in lowercase, with non-letters turned into spaces
+        for ch in doc.lower():       # ch = one character of the document
+            cleaned += ch if ch.isalpha() else " "
+        corpus.append(cleaned.split())   # split() drops extra spaces and gives [] for empty text
+    return corpus
 
 # Step 4 - split_train_val_test_indices (not yet solved)
 # TODO: implement
