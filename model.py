@@ -97,8 +97,10 @@ def compute_idf(df: np.ndarray, n_docs: int) -> np.ndarray:
     df = np.asarray(df, dtype=float)             # float copy so the division below is not integer division
     return np.log((n_docs + 1) / (df + 1)) + 1
 
-# Step 11 - transform_tfidf (not yet solved)
-# TODO: implement
+# Step 11 - transform_tfidf
+def transform_tfidf(bow_matrix: np.ndarray, idf: np.ndarray) -> np.ndarray:
+    # TODO: Multiply BoW counts by the fitted IDF vector to produce TF-IDF features.
+    return np.asarray(bow_matrix, dtype=float) * np.asarray(idf, dtype=float)
 
 # Step 12 - fit_tfidf (not yet solved)
 # TODO: implement
