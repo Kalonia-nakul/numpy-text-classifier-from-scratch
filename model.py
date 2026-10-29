@@ -87,8 +87,10 @@ def corpus_to_bow_matrix(tokenized_docs: list, vocab: dict) -> np.ndarray:
         matrix[i] = tokens_to_bow(tokens, vocab)        # length-V count vector for that document
     return matrix
 
-# Step 9 - compute_document_frequencies (not yet solved)
-# TODO: implement
+# Step 9 - compute_document_frequencies
+def compute_document_frequencies(bow_matrix: np.ndarray) -> np.ndarray:
+    present = bow_matrix > 0        # boolean matrix: True where document i contains term j
+    return present.sum(axis=0)
 
 # Step 10 - compute_idf (not yet solved)
 # TODO: implement
