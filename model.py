@@ -92,8 +92,10 @@ def compute_document_frequencies(bow_matrix: np.ndarray) -> np.ndarray:
     present = bow_matrix > 0        # boolean matrix: True where document i contains term j
     return present.sum(axis=0)
 
-# Step 10 - compute_idf (not yet solved)
-# TODO: implement
+# Step 10 - compute_idf
+def compute_idf(df: np.ndarray, n_docs: int) -> np.ndarray:
+    df = np.asarray(df, dtype=float)             # float copy so the division below is not integer division
+    return np.log((n_docs + 1) / (df + 1)) + 1
 
 # Step 11 - transform_tfidf (not yet solved)
 # TODO: implement
