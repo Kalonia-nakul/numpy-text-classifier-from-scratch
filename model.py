@@ -102,8 +102,13 @@ def transform_tfidf(bow_matrix: np.ndarray, idf: np.ndarray) -> np.ndarray:
     # TODO: Multiply BoW counts by the fitted IDF vector to produce TF-IDF features.
     return np.asarray(bow_matrix, dtype=float) * np.asarray(idf, dtype=float)
 
-# Step 12 - fit_tfidf (not yet solved)
-# TODO: implement
+# Step 12 - fit_tfidf
+def fit_tfidf(bow_train: np.ndarray) -> np.ndarray:
+    # TODO: Fit IDF on the training BoW matrix by chaining DF and IDF.
+    bow_train = np.asarray(bow_train)                 # training count matrix, shape (N_train, V)
+    n_docs = bow_train.shape[0]                       # N_train: number of training documents
+    df = compute_document_frequencies(bow_train)      # df[j] = number of training docs containing term j
+    return compute_idf(df, n_docs)
 
 # Step 13 - sigmoid (not yet solved)
 # TODO: implement
